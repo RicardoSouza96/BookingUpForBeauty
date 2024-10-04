@@ -8,10 +8,7 @@ static class Appointment
         return parsedDate;
     }
 
-    public static bool HasPassed(DateTime appointmentDate)
-    {
-        throw new NotImplementedException("Please implement the (static) Appointment.HasPassed() method");
-    }
+    public static bool HasPassed(DateTime appointmentDate) => DateTime.Now > appointmentDate ? true : false;
 
     public static bool IsAfternoonAppointment(DateTime appointmentDate)
     {
