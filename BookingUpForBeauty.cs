@@ -2,19 +2,12 @@ using System;
 
 static class Appointment
 {
-    public static DateTime Schedule(string appointmentDateDescription)
-    {
-        var parsedDate = DateTime.Parse(appointmentDateDescription);
-        return parsedDate;
-    }
+    public static DateTime Schedule(string appointmentDateDescription) => DateTime.Parse(appointmentDateDescription);
 
-    public static bool HasPassed(DateTime appointmentDate) => DateTime.Now > appointmentDate ? true : false;
+    public static bool HasPassed(DateTime appointmentDate) => DateTime.Now > appointmentDate;
 
-    public static bool IsAfternoonAppointment(DateTime appointmentDate)
-    {
-        throw new NotImplementedException("Please implement the (static) Appointment.IsAfternoonAppointment() method");
-    }
-
+    public static bool IsAfternoonAppointment(DateTime appointmentDate) => appointmentDate.TimeOfDay.TotalHours >= 12;
+        
     public static string Description(DateTime appointmentDate)
     {
         throw new NotImplementedException("Please implement the (static) Appointment.Description() method");
